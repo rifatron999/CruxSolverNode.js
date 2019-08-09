@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS-ADDResponse</title>
+
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  text-align: center;
+  padding: 5px;
+
+}
+td.head{
+	color: cyan;
+
+}
+td.d{
+	text-align: left;
+
+}
+
+tr{
+	overflow: hidden;
+	white-space: wrap;
+}
+
+
+div.answerList {
+  background-color: cyan;
+  height: 400px;
+  
+  
+  overflow-y: scroll;
+  
+ 
+}
+
+
+textarea.a {
+  height: 100px;
+  width: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:rgb(158, 255, 219);
+  font-size: 20px;
+  
+}
+
+
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #000000;
+  color: white;
+}
+
+
+tr:hover {background-color:#6bf25e;}
+
+
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+h3{
+	color:#ffffff;
+	background-color:rgb(240, 235, 84);
+	text-align: center;
+	word-spacing: 10px;
+	padding: 12px;
+	
+
+}
+
+h3:hover {background-color:#6bf25e;}
+textarea, h1:hover {background-color:#6bf25e;}
+
+
+button{color:#f72020; font-weight: bold;}
+button:hover {background-color:#000000;color:#ffffff;}
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+</head>
+<body >
+	<h1>
+		<marquee  behavior="alternate" hspace="490px">CRUX SOLVER RESPONSE</marquee>
+		</h1><h3>
+
+		<button onclick="window.location.href='/home/admin'" >Admin</button>
+		<button onclick="window.location.href='/home/siteMod'">SiteMod</button> 
+		<button onclick="window.location.href='/home/'">Home </button>
+		
+
+
+		♛<%= uname %>  <%= uRepu %> 
+
+        <button onclick="window.location.href='/home/ask'">Ask a question</button>
+        <button onclick="window.location.href='/home/helpCenter'" >Help Center</button>
+		<button style="width: 70px;height: 20px"onclick="window.location.href='/logout'">Logout</button>
+
+        
+		
+		
+
+		</h3>
+		<span style="color:red" ><%= er1 %></span>
+
+
+		<!-- 1st q show table -->
+
+
+<table  align= "center"  >
+
+
+
+	
+	<tr>
+		<td  style="background-color:rgb(255,249,132)" ><span style="color:green">TITLE:</span><b style="color:red"> <%= questionDetailByid[0].q_title %></b></td>
+	<td align="center"  style="background-color:rgb(191,255,255)" ><span style="color:green" >QUESTION ID: <%= questionDetailByid[0].q_id %></span>   &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:green" >SUBMITTED BY: <%= questionDetailByid[0].u_name %> </span>   &nbsp; &nbsp; &nbsp; &nbsp;
+<span style="color:green" >✉: <%= questionDetailByid[0].u_email %></span>   
+	 </td>
+	
+
+	</tr>
+	
+	
+	
+	<tr> </tr>
+	<tr> </tr>
+	
+	
+	<tr>
+	<td class="d" colspan="2" style="background-color:rgb(223,215,255)" ><span style="color:green">DESCRIPTION: </span><b><%= questionDetailByid[0].q_question %></b></td>
+	</tr>
+	
+	<tr> </tr>
+	<tr> </tr>
+	
+	
+	
+	<tr>
+	<td align="center"  colspan="2"  style="background-color:rgb(204,249,225)"><span style="color:green">SCREENSHOT/PICTURE:<%= questionDetailByid[0].q_picture %></span></td>
+	</tr>
+	
+	<tr> </tr>
+	<tr> </tr>
+	</table>
+
+
+
+	<!-- 2st answer submit table -->
+		<form method="post">
+			
+
+
+			<table>
+				
+<tr>
+
+<td >
+	<textarea class='a' placeholder="ENTER YOUR RESPONSE HERE"  style="background-color:rgb(255,249,132);height: 60px; width:1520px;" name="ans" ></textarea>
+	
+<!-- Response submit button -->
+	
+	<button type="submit"  name="submit button" style="background-color:rgb(224, 40, 40);height: 30px; width:400px;"    ><font color="white"><b>SUBMIT RESPONSE</b></button>
+
+<!-- Response submit button -->	
+	
+	</td> 
+
+	<td  height="150"></td>
+
+<tr>
+
+
+			</table>
+			
+
+
+
+
+
+
+
+
+		</form>
+
+<!--
+<form  >
+-->
+<table>
+	
+<tr>
+			<th style="width:10px" >ID</th>
+			<th style="width:1050px" >RESPONSES</th>
+			
+			<th style="width:10px"  >RATING</th>
+			<th style="width:10px"  >RESPONDER</th>
+			<th style="width:10px"  >VOTE/REPORT</th>
+		</tr>
+
+</table>
+
+	<div  class="answerList">
+<table  border="1">
+		<tr>
+			<td class='head' >ID</td>
+			<td class='head' >RESPONSES</td>
+			
+			<td class='head' >RATING</td>
+			<td class='head' >RESPONDER</td>
+			<td class='head' >VOTE/REPORT</td>
+		</tr>
+
+		<% for(var i=0; i < answerListByid.length; i++){ %>
+
+		<tr style="border-right:none">
+			<td style="width:10px" ><%= answerListByid[i].a_id %></td>
+			<td style="max-width:150px" ><%= answerListByid[i].a_answer %></td>
+			
+			<td style="width:10px" ><%= answerListByid[i].a_rating %></td>
+			<td style="width:10px" ><%= answerListByid[i].u_name %></td>
+			
+			<td style="width:10px" >
+				<button style="width: 30px;height: 30px">✔</button>  <button style="width: 30px;height: 30px">✘</button>
+				
+				
+			</td>
+		</tr>
+
+		<% } %>
+	</table>
+	</div>
+	<!--
+	</form>
+-->
+
+</body>
+</html>

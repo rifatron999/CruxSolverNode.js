@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS-SiteMod</title>
+
+
+<style>
+	
+
+
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+h3{
+	color:#ffffff;
+	background-color:rgb(240, 235, 84);
+	text-align: center;
+	word-spacing: 10px;
+	padding: 12px;
+	
+
+}
+
+h3:hover {background-color:#6bf25e;}
+textarea, h1:hover {background-color:#6bf25e;}
+
+
+button{color:#f72020; font-weight: bold;}
+button:hover {background-color:#000000;color:#ffffff;}
+
+
+
+
+
+
+</style>
+
+
+
+<h1>
+		<marquee  behavior="alternate" hspace="530px">CRUX SOLVER SiteMod</marquee>
+		</h1><h3>
+
+		<button onclick="window.location.href='/home/admin'">Admin</button> 
+		<button onclick="window.location.href='/home/'">Home</button>
+		
+
+
+		♛<%= uname %>  <%= uRepu %> 
+
+		<button style="width: 70px;height: 20px"onclick="window.location.href='/logout'">Logout</button>
+
+        <button onclick="window.location.href='/home/helpCenter'" >Help Center</button>
+		
+		
+		<button onclick="window.location.href='/home/ask'">Ask a question</button>
+
+		</h3> 
+		<form method="post" >
+		<table align="left">
+			<tr>
+				<td>ENTER TAG:</td>
+				<td><input class='b'  type="text" name="t_tag"></td>
+			 </tr> 
+			 
+			 <tr> 
+				 <td colspan="100%"><input class='a' type="submit" name="" value="CREATE"> 
+				</td> 
+				<p1> <a href="/siteMod">Back</a> <br> </p1>
+										 <br>
+			 </tr> 
+		</table>
+	</form>
+
+<table border="1" >
+	<tr><td colspan="400%" bgcolor="#f5e900"  >TagList</td></tr>
+		<tr>
+			<th>ID</th>
+			<th>TAG NAME</th>
+			
+			
+		</tr>
+
+		<% for(var i=0; i < tagList.length; i++){ %>
+
+		<tr>
+			<td><%= tagList[i].t_id %></td>
+			<td><%= tagList[i].t_name %></td>
+			
+
+
+			
+		</tr>
+
+		<% } %>
+	</table>
+	
+	
+	
+
+	
+	
+		
+</body>
+</html>

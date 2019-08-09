@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS-Ask</title>
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  text-align: center;
+  
+}
+
+textarea.b{
+	height: 40%;
+	width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+	background-color:rgb(191,255,255);
+font-size: 20px;
+}
+
+textarea.a {
+  height: 100px;
+  width: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:rgb(158, 255, 219);
+  font-size: 20px;
+  
+}
+
+
+font.a {
+  
+  
+  margin-left: 90px;
+  
+  background-color:rgb(158, 255, 219);
+  font-size: 20px;
+  
+}
+
+
+
+select {
+    width: 30%;
+      background-color:rgb(240, 216, 185);
+   
+}
+
+
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+h3{
+	color:#ffffff;
+	background-color:rgb(240, 235, 84);
+	text-align: center;
+	word-spacing: 10px;
+	padding: 12px;
+	
+
+}
+
+h3:hover {background-color:#6bf25e;}
+textarea, h1:hover {background-color:#6bf25e;}
+
+
+button{color:#f72020; font-weight: bold;}
+button:hover {background-color:#000000;color:#ffffff;}
+
+
+</style>
+
+</head>
+ <body>
+
+<h1>
+		<marquee  behavior="alternate" hspace="550px">CRUX SOLVER ASK</marquee>
+		</h1><h3>
+
+		<button onclick="window.location.href='/home/admin'" >Admin</button>
+		<button onclick="window.location.href='/home/siteMod'">SiteMod</button> 
+		<button onclick="window.location.href='/home/'">Home </button>
+		
+
+
+		♛<%= uname %>  <%= uRepu %> 
+
+        <button onclick="window.location.href='/home/ask'">↺ Ask a question</button>
+        <button onclick="window.location.href='/home/helpCenter'" >Help Center</button>
+		<button style="width: 70px;height: 20px"onclick="window.location.href='/logout'">Logout</button>
+
+        
+		
+		
+
+		</h3> 
+		<span style="color:red" ><%= er1 %></span>
+	
+	<form  method="post" >
+
+	
+     <b> <p style="color:rgb(192,192,192);text-align:center ">Ask a question</p></b>
+	  
+         <!-- title -->
+
+		<textarea class="b" size="50" placeholder="Enter Question Title (MANDATORY)"   name="qTitle" ></textarea> <br>
+		<!-- question -->
+		
+        <textarea class="a" placeholder="Enter Question Description"  name="qDescription" ></textarea> <br>
+		
+		<!-- tag 
+		
+		<textarea class="b" placeholder="Enter Tag"  name="tag" ></textarea>
+		<br>
+
+		-->
+
+		<!-- image -->
+        <font class="a" size="1" style="background-color:rgb(255,255,128);text-align:center "> ENTER PROBLEM/SCREENSHOT IF ANY(*PNG ONLY) </font> 
+		<input style="background-color:rgb(255,255,128)"  type="file" name="picUpload" >
+		<!-- image ends -->
+
+		<font size="1" style="background-color:rgb(115, 255, 138);text-align:center ">SELECT TAG</font> 
+<!-- select starts -->
+		<select name="qTag">
+			<% for(var i=0; i < tagList.length; i++){ %>
+    <option value="<%= tagList[i].t_name %>"><%= tagList[i].t_name %></option>
+    
+    <% } %>
+  </select>
+  <!-- select ends -->
+		
+	 <button type="submit"  style="background-color:rgb(128,255,128)"   align="right" ><font color="red"><b>SUBMIT QUESTION</b></button><br>
+	
+	</form>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS-HelpCenter</title>
+
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  text-align: center;
+  
+}
+
+textarea.c{
+	height: 50%;
+	width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+	background-color:rgb(191,255,255);
+font-size: 20px;
+}
+
+
+font.c {
+  
+  
+  margin-left: 90px;
+  
+  background-color:rgb(158, 255, 219);
+  font-size: 20px;
+  
+}
+
+
+
+select {
+    width: 30%;
+      background-color:rgb(240, 216, 185);
+   
+}
+
+	
+
+
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+h3{
+	color:#ffffff;
+	background-color:rgb(240, 235, 84);
+	text-align: center;
+	word-spacing: 10px;
+	padding: 12px;
+	
+
+}
+
+h3:hover {background-color:#6bf25e;}
+textarea, h1:hover {background-color:#6bf25e;}
+
+
+button{color:#f72020; font-weight: bold;}
+button:hover {background-color:#000000;color:#ffffff;}
+
+
+
+
+
+
+</style>
+
+
+
+<h1>
+		<marquee  behavior="alternate" hspace="455px">CRUX SOLVER HELP CENTER</marquee>
+		</h1><h3>
+
+		<button onclick="window.location.href='/home/admin'" >Admin</button>
+		<button onclick="window.location.href='/home/siteMod'">SiteMod</button> 
+		<button onclick="window.location.href='/home/'">Home </button>
+		
+
+
+		♛<%= uname %>  <%= uRepu %> 
+
+        <button onclick="window.location.href='/home/ask'">Ask a question</button>
+        <button onclick="window.location.href='/home/helpCenter'" >↺ Help Center</button>
+		<button style="width: 70px;height: 20px"onclick="window.location.href='/logout'">Logout</button>
+
+        
+		
+		
+
+		</h3>
+
+		
+		<form  method="post" >
+
+	
+     <b> <p style="color:rgb(192,192,192);text-align:center ">Help Center</p></b>
+	  
+         <!-- title -->
+        
+		<textarea class="c" size="10000" placeholder="How to Ask Question??"   name="title1" value="<%=t_help.h_ask%>" ></textarea> <br>
+		<!-- question -->
+		
+
+	 <input type="submit" name="update" value="Update">
+	  
+		
+	<br> </br>	
+	
+	<!-- title -->
+        
+		<textarea class="c" size="10000" placeholder="How to get rensponse??"   name="title2" value="<%=t_help.h_answer%>" ></textarea> <br>
+		<!-- question -->
+		
+
+	 <input type="submit" name="update" value="Update">
+		
+	<br> </br>	
+	
+	<!-- title -->
+        
+		<textarea class="c" size="10000" placeholder="How to gain reputation??"   name="title3" value="<%=t_help.h_reputation%>"></textarea> <br>
+		<!-- question -->
+		
+
+	 <input type="submit" name="update" value="Update">
+		
+	<br> </br>	
+	
+	</form>
+
+
+
+
+
+	
+	
+		
+</body>
+</html>

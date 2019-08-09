@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User List page</title>
+</head>
+<body> 
+
+	<style>
+	
+
+
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+h3{
+	color:#ffffff;
+	background-color:rgb(240, 235, 84);
+	text-align: center;
+	word-spacing: 10px;
+	padding: 12px;
+	
+
+}
+
+h3:hover {background-color:#6bf25e;}
+textarea, h1:hover {background-color:#6bf25e;}
+
+
+button{color:#f72020; font-weight: bold;}
+button:hover {background-color:#000000;color:#ffffff;}
+
+
+
+
+
+
+</style>
+
+<h1>
+		<marquee  behavior="alternate" hspace="540px">CRUX SOLVER ADMIN</marquee>
+		</h1><h3>
+
+		<button onclick="window.location.href='/home/admin'" >↺ Admin</button>
+		<button onclick="window.location.href='/home/siteMod'">SiteMod</button> 
+		<button onclick="window.location.href='/home/'">Home </button>
+		
+
+
+		♛<%= uname %>  <%= uRepu %> 
+
+        <button onclick="window.location.href='/home/ask'">Ask a question</button>
+        <button onclick="window.location.href='/home/helpCenter'" >Help Center</button>
+		<button style="width: 70px;height: 20px"onclick="window.location.href='/logout'">Logout</button>
+
+        
+		
+		
+
+		</h3> 
+
+
+
+
+
+<style>
+	
+			table.scroll {
+		    width: 40%; /* Optional */
+		    /* border-collapse: collapse; */
+		    border-spacing: 0;
+		    border: 2px solid black;
+			}
+
+			table.scroll tbody,
+			table.scroll thead { display: block; }
+
+			thead tr th { 
+		    height: 100px;
+		    line-height: 30px;
+		    /*text-align: left;*/
+			}
+
+			table.scroll tbody {
+		    height: 100px;
+		    overflow-y: auto;
+		    overflow-x: hidden;
+			}
+
+			tbody { border-top: 2px solid black; }
+
+			tbody td, thead th {
+		    width: 20%; /* Optional */
+		    border-right: 1px solid black;
+			}
+
+	</style>
+
+
+
+	<h1 align="center">User List</h1>
+
+
+
+	<table class="scroll", align="center" border="1">
+		<tr>
+			<th>ID</th>
+			<th>Username</th>
+			<th>RATING</th>
+			<th>Action</th>
+		</tr>
+
+		<% for(var i=0; i < userList.length; i++){ %>
+
+		<tr>
+			<td><%= userList[i].u_id %></td>
+			<td><%= userList[i].u_name %></td>
+			<td><%= userList[i].u_reputation %></td>
+			<td>
+				<a href="/home/edit/<%= userList[i].id %>">Edit</a> | 
+				<a href="/admin/userList/delete/<%= userList[i].u_id%>">Delete</a>
+			</td>
+		</tr>
+
+		<% } %>
+	</table>
+
+</body>
+</html>

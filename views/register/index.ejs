@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS-REGISTER</title>
+
+	<style>
+
+
+
+		
+table {
+  border-collapse: collapse;
+  font-size: 40px;
+  
+}
+
+th, td {
+  text-align: center;
+  padding: 2px;
+}
+
+td.t:hover{color:#ffffff;}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+tr:hover {background-color:#6bf25e;}
+		
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 10px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+
+h2{
+	color:#ffffff;
+	background-color:rgb(212, 214, 94);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+
+h5{
+	color:#000000;
+	
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 2px 4px #32db46;
+
+}
+
+input.a{color:#0a12fa; font-weight: bold;}
+
+input.a:hover {background-color:#000000;color:#ffffff;}
+
+
+
+input.b{
+	
+	width: 100%;
+	padding: 6px;
+}
+
+
+
+
+
+
+.button {
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #31b08a;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</style>
+</head>
+<body bgcolor="#f6f78b">
+	<h1><marquee  behavior="alternate" hspace="510px">CRUX SOLVER REGISTER</marquee></h1>
+	
+	<h2><button onclick="window.location.href='/login'"  class="button"  style="vertical-align:middle"   ><span>SIGN IN</span></button></h2>
+
+	<span style="color:red" ><%= er1 %></span>
+
+	<h5>
+
+
+
+	
+
+	<form method="post" >
+		<table align="center">
+			<tr>
+				<td class ='t'>Enter Username:</td>
+				<td><input class='b'  type="text" name="rusername"></td>
+			</tr>
+
+
+			<tr>
+				<td class ='t'>Confirm Username:</td>
+				<td><input class='b'  type="text" name="rcusername"></td>
+			</tr>
+
+			<tr>
+				<td class ='t'>Enter Password:</td>
+				<td><input class='b' type="password" name="rpassword"></td>
+			</tr>
+			<tr>
+				<td class ='t'>Confirm Password:</td>
+				<td><input class='b' type="password" name="rcpassword"></td>
+			</tr>
+
+			<tr>
+				<td class ='t'>Enter D-O-B:</td>
+				<td><input placeholder="dd-mm-yyyy" class='b' type="text" name="rdob"></td>
+			</tr>
+			<tr>
+				
+				<td> <input type="radio" name ="gn" value="male" /> Male</td>
+                <td><input type="radio" name ="gn" value="felame"/> Female </td>
+			</tr>
+			<tr>
+				<td class ='t'>Enter Email:</td>
+				<td><input class='b' type="text" name="remail"></td>
+			</tr>
+
+			<tr>
+				<td ><input class='a' type="submit" name="" value="SIGN UP"> </td>
+				
+				</table>
+				</form>	
+			</h5>
+		
+	
+</body>
+</html>

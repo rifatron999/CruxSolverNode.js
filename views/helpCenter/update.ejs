@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HelpCenter</title>
+
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  text-align: center;
+  
+}
+
+textarea.c{
+	height: 50%;
+	width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+	background-color:rgb(191,255,255);
+font-size: 20px;
+}
+
+
+font.c {
+  
+  
+  margin-left: 90px;
+  
+  background-color:rgb(158, 255, 219);
+  font-size: 20px;
+  
+}
+
+
+
+select {
+    width: 30%;
+      background-color:rgb(240, 216, 185);
+   
+}
+
+	
+
+
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+h3{
+	color:#ffffff;
+	background-color:rgb(240, 235, 84);
+	text-align: center;
+	word-spacing: 10px;
+	padding: 12px;
+	
+
+}
+
+h3:hover {background-color:#6bf25e;}
+textarea, h1:hover {background-color:#6bf25e;}
+
+
+button{color:#f72020; font-weight: bold;}
+button:hover {background-color:#000000;color:#ffffff;}
+
+
+
+
+
+
+</style>
+
+
+
+<h1>
+		<marquee  behavior="alternate" hspace="455px">CRUX SOLVER HELP CENTER</marquee>
+		</h1><h3>
+
+		<button onclick="window.location.href='/home/admin'" >Admin</button>
+		<button onclick="window.location.href='/home/siteMod'">SiteMod</button> 
+		<button onclick="window.location.href='/home/'">Home </button>
+		
+
+
+		♛<%= uname %>  <%= uRepu %> 
+
+        <button onclick="window.location.href='/home/ask'">Ask a question</button>
+        <button onclick="window.location.href='/home/helpCenter'" >↺ Help Center</button>
+		<button style="width: 70px;height: 20px"onclick="window.location.href='/logout'">Logout</button>
+
+        
+		
+		
+
+		</h3>
+
+		
+		
+
+	
+     <b> <p style="color:Blue;text-align:center ">Help Center</p></b>
+	 <br></br>
+	 <b> <p style="color:rgb(192,192,192);text-align:center ">How to Ask Question??</p></b>
+	  
+     <br> </br>	
+	 <p style="color:black;text-align:left-side">1.Click on Ask a question.
+	 2.Enter a question title(mandatory).
+	 3.Enter Question description.
+	 4.Add a screenshot or picture of your problem (if any) from the 'Choose file' option(must be .png file).
+	 5.Select tag of your related question from 'Select Tag' option.
+	 6.Submit your question using the 'Submit Question' button. </p>
+	
+	<br> </br>	
+	
+	<a href="/helpCenter/edit/>">Edit</a> 
+
+
+
+
+
+	
+	
+		
+</body>
+</html>

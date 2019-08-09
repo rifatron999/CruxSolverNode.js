@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS-LOGIN</title>
+
+	<style>
+
+
+
+		
+table {
+  border-collapse: collapse;
+  font-size: 40px;
+  
+}
+
+th, td {
+  text-align: center;
+  padding: 2px;
+}
+
+td.t:hover{color:#ffffff;}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+tr:hover {background-color:#6bf25e;}
+		
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+
+h2{
+	color:#ffffff;
+	background-color:rgb(212, 214, 94);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+
+
+input.a{color:#0a12fa; font-weight: bold;}
+
+input.a:hover {background-color:#000000;color:#ffffff;}
+
+
+
+input.b{
+	
+	width: 100%;
+	padding: 6px;
+}
+
+
+
+
+.button {
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #48d435;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</style>
+</head>
+<body bgcolor="#f6f78b">
+	<h1><marquee  behavior="alternate" hspace="550px">CRUX SOLVER LOGIN</marquee></h1>
+	
+
+	<h2><button onclick="window.location.href='/login/register'"  class="button"  style="vertical-align:middle"   ><span>SIGN UP</span></button></h2>
+
+	<h3>
+		<span style="color:red" ><%= er1 %></span>
+
+	<br><br><br>
+
+	<form method="post" >
+		<table align="center">
+			<tr>
+				<td class ='t'>Username:</td>
+				<td><input class='b'  type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td class ='t'>Password:</td>
+				<td><input class='b' type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td ><input class='a' type="submit" name="" value="SIGN IN"> </td>
+				
+				</table>
+				</form>	
+			</h3>
+		
+	
+</body>
+</html>

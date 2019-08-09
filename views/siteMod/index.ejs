@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS-SiteMod</title>
+
+
+<style>
+	
+
+
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+h3{
+	color:#ffffff;
+	background-color:rgb(240, 235, 84);
+	text-align: center;
+	word-spacing: 10px;
+	padding: 12px;
+	
+
+}
+
+h3:hover {background-color:#6bf25e;}
+textarea, h1:hover {background-color:#6bf25e;}
+
+
+button{color:#f72020; font-weight: bold;}
+button:hover {background-color:#000000;color:#ffffff;}
+
+
+
+
+
+
+</style>
+
+
+
+<h1>
+		<marquee  behavior="alternate" hspace="530px">CRUX SOLVER SiteMod</marquee>
+		</h1><h3>
+
+		<button onclick="window.location.href='/home/admin'" >Admin</button>
+		<button onclick="window.location.href='/home/siteMod'">↺ SiteMod</button> 
+		<button onclick="window.location.href='/home/'">Home </button>
+		
+
+
+		♛<%= uname %>  <%= uRepu %> 
+
+        <button onclick="window.location.href='/home/ask'">Ask a question</button>
+        <button onclick="window.location.href='/home/helpCenter'" >Help Center</button>
+		<button style="width: 70px;height: 20px"onclick="window.location.href='/logout'">Logout</button>
+
+        
+		
+		
+
+		</h3> 
+
+		<span style="color:red" ><%= er1 %></span>
+		
+	
+	
+       <a href="/siteMod/taglist">TagList</a> 
+
+
+	
+	
+	<table class="scroll", align="center" border="1">
+			<caption><h2>Reported User</h2></caption>
+		<tr>
+			<th>User ID</th>
+			<th>Name</th>
+			
+			<th>RATING</th>
+			
+			
+		</tr>
+
+		<% for(var i=0; i < report.length; i++){ %>
+
+		<tr>
+	    <td><%= report[i].u_id %></td>
+	    <td><%= report[i].u_name %></td>
+	    <td><%= report[i].u_reputation %></td>
+		
+		
+  		</tr>
+  		<% } %>
+
+		  
+	</table>
+	
+	
+	<table class="scroll", align="center" border="1">
+			<caption><h2>register User</h2></caption>
+		<tr>
+			<th>User ID</th>
+			<th>Name</th>
+			
+			<th>RATING</th>
+			
+			<th>BAN</th>
+		</tr>
+
+		<% for(var i=0; i < userlist.length; i++){ %>
+
+		<tr>
+	    <td><%= userlist[i].u_id %></td>
+	    <td><%= userlist[i].u_name %></td>
+	    <td><%= userlist[i].u_reputation %></td>
+	    <td><button  onclick="window.location.href='/siteMod/index/<%= userlist[i].u_id  %>'">✘</button></td>
+  		</tr>
+  		<% } %>
+		
+		
+
+		  
+	</table>
+
+
+
+	
+	
+		
+</body>
+</html>

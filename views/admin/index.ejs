@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS-Admin</title>
+
+
+<style>
+	
+
+
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+h3{
+	color:#ffffff;
+	background-color:rgb(240, 235, 84);
+	text-align: center;
+	word-spacing: 10px;
+	padding: 12px;
+	
+
+}
+
+h3:hover {background-color:#6bf25e;}
+textarea, h1:hover {background-color:#6bf25e;}
+
+
+button{color:#f72020; font-weight: bold;}
+button:hover {background-color:#000000;color:#ffffff;}
+
+
+
+
+
+
+</style>
+
+
+
+<h1>
+		<marquee  behavior="alternate" hspace="540px">CRUX SOLVER ADMIN</marquee>
+		</h1><h3>
+
+		<button onclick="window.location.href='/home/admin'" >↺ Admin</button>
+		<button onclick="window.location.href='/home/siteMod'">SiteMod</button> 
+		<button onclick="window.location.href='/home/'">Home </button>
+		
+
+
+		♛<%= uname %>  <%= uRepu %> 
+
+        <button onclick="window.location.href='/home/ask'">Ask a question</button>
+        <button onclick="window.location.href='/home/helpCenter'" >Help Center</button>
+        <button  onclick="window.location.href='/admin/user_list'">User List</button>
+		<button style="width: 70px;height: 20px"onclick="window.location.href='/logout'">Logout</button>
+
+        
+		
+		
+
+		</h3> 
+
+<span style="color:red" ><%= er1 %></span>
+
+
+	<style>
+	
+			table.scroll {
+		    width: 46%; /* Optional */
+		    /* border-collapse: collapse; */
+		    border-spacing: 0;
+		    border: 2px solid black;
+			}
+
+			table.scroll tbody,
+			table.scroll thead { display: block; }
+
+			thead tr th { 
+		    height: 100px;
+		    line-height: 30px;
+		    /*text-align: left;*/
+			}
+
+			table.scroll tbody {
+		    height: 150px;
+		    overflow-y: auto;
+		    overflow-x: hidden;
+			}
+
+			tbody { border-top: 2px solid black; }
+
+			tbody td, thead th {
+		    width: 20%; /* Optional */
+		    border-right: 1px solid black;
+			}
+
+	</style>
+
+
+
+	<table class="scroll", align="left" border="1">
+			<caption><h2>Reported User</h2></caption>
+		<tr>
+			<th>User ID</th>
+			<th>Name</th>
+			
+			<th>RATING</th>
+			
+			<th>DISCARD/BAN</th>
+		</tr>
+
+		<% for(var i=0; i < report.length; i++){ %>
+
+		<tr>
+		    <td><%= report[i].u_id %></td>
+		    <td><%= report[i].u_name %></td>
+		    <td><%= report[i].u_reputation %></td>
+		    <td><button style="width: 30px;height: 30px">✔</button> <button style="width: 30px;height: 30px">✘</button></td>
+  		</tr>
+  		<% } %>
+
+		  
+	</table>
+
+				
+				
+
+
+				 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+				 
+
+
+
+
+	<table class="scroll", align="right" border="1">
+			<caption><h2>Reported Questions</h2></caption>
+		<tr>
+			<th>QUESTION ID</th>
+			<th>QUESTION TITLE</th>
+			
+			<th>RATING</th>
+			
+			<th>DISCARD/DELETE</th>
+		</tr>
+
+		<% for(var i=0; i < qreport.length; i++){ %>
+		<tr>
+		    <td><%= qreport[i].q_id %></td>
+		    <td><%= qreport[i].q_title %></td>
+		    <td><%= qreport[i].q_raiting %></td>
+		    <td><button style="width: 30px;height: 30px">✔</button> <button style="width: 30px;height: 30px">✘</button></td>
+  		</tr>
+  		<% } %>
+
+	</table>
+
+
+
+		<table class="scroll" align="right" border="1">
+			<caption><h2>Reported Answer</h2></caption>
+		<tr>
+			<th>ANSWER ID</th>
+			<th>ANSWER TITLE</th>
+			
+			<th>RATING</th>
+			
+			<th>DISCARD/DELETE</th>
+		</tr>
+
+
+		<% for(var i=0; i < areport.length; i++){ %>
+		<tr>
+		    <td><%= areport[i].a_id %></td>
+		    <td><%= areport[i].a_answer %></td>
+		    <td><%= areport[i].a_rating %></td>
+		    <td><button style="width: 30px;height: 30px">✔</button> <button style="width: 30px;height: 30px">✘</button></td>
+	  	</tr>
+
+	  	<% } %>
+
+		</table>
+
+<form method="post" >
+		<table align="left">
+			<tr>
+				<td>ENTER TAG:</td>
+				<td><input class='b'  type="text" name="t_tag"></td>		
+				 <td colspan="100%"><input class='a' type="submit" name="" value="CREATE"> 
+				</td> 
+				
+			 </tr> 
+		</table>
+	</form>
+
+
+
+
+
+
+
+		<table class="scroll", align="left" border="1">
+				<caption><h2>Tag List</h2></caption>
+				<tr>
+					<td align="center" colspan="100%">TagList</td>
+				</tr>
+					
+					<tr>
+						<th>ID</th>
+						<th>TAG NAME</th>
+						<th>ACTION</th>
+						
+						
+					</tr>
+
+				<% for(var i=0; i < tagList.length; i++){ %>
+
+					<tr>
+						<td><%= tagList[i].t_id %></td>
+						<td><%= tagList[i].t_name %></td>
+						<td><button style="width: 80px;height: 30px">Remove</button></td>
+
+					</tr>
+
+				<% } %>
+		</table>
+		
+
+		
+</body>
+</html>

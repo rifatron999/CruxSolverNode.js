@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS-HOME</title>
+
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+div.questionList {
+  background-color: cyan;
+  height: 440px;
+  
+  
+  overflow-y: scroll;
+  
+ 
+}
+
+
+
+th, td {
+  text-align: center;
+  padding: 2px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+tr:hover {background-color:#6bf25e;}
+
+h1{
+	color:#ffffff;
+	background-color:rgb(158, 255, 219);
+	text-align: center;
+	word-spacing: 30px;
+	text-shadow: 5px 4px #545451;
+
+}
+
+h3{
+	color:#ffffff;
+	background-color:rgb(240, 235, 84);
+	text-align: center;
+	word-spacing: 10px;
+	padding: 12px;
+	
+
+}
+
+h3:hover {background-color:#6bf25e;}
+h1:hover {background-color:#6bf25e;}
+
+
+button{color:#f72020; font-weight: bold;}
+button:hover {background-color:#000000;color:#ffffff;}
+
+</style>
+
+
+</head>
+<body >
+	<h1>
+		<marquee  behavior="alternate" hspace="550px">CRUX SOLVER HOME</marquee>
+		</h1><h3>
+
+		<button onclick="window.location.href='/home/admin'" >Admin</button>
+		<button onclick="window.location.href='/home/siteMod'">SiteMod</button> 
+		<button onclick="window.location.href='/home/'">↺ Home </button>
+		
+
+
+		♛<%= uname %>  <%= uRepu %> 
+
+        <button onclick="window.location.href='/home/ask'">Ask a question</button>
+        <button onclick="window.location.href='/home/helpCenter'" >Help Center</button>
+		<button style="width: 70px;height: 20px"onclick="window.location.href='/logout'">Logout</button>
+
+        
+		
+		
+
+		</h3>  
+		
+
+
+
+
+
+
+	
+	
+		<table>
+			<tr><td colspan="100%" bgcolor="#f5e900"  >Submitted Questions</td></tr>
+			
+
+		</table>
+		
+
+<div  class="questionList">
+
+<table border="1" >
+	
+		<tr>
+			<th>ID</th>
+			<th>TITLE</th>
+			
+			<th>RATING</th>
+			<th>QUESTIONER</th>
+			<th>VOTE/REPORT</th>
+		</tr>
+
+		<% for(var i=0; i < questionList.length; i++){ %>
+
+		<tr style="border-right:none" >
+			<td><%= questionList[i].q_id %></td>
+			<td><%= questionList[i].q_title %></td>
+			
+			<td><%= questionList[i].q_rating %></td>
+			<td><%= questionList[i].u_name %></td>
+
+
+			<td>
+				<button>✔</button>  <button>✘</button>
+				
+				
+			</td>
+			
+			<td>
+				
+				<button  onclick="window.location.href='/home/addcomment/<%= questionList[i].q_id %>'">Add response</button>
+				
+			</td>
+		</tr>
+
+		<% } %>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+</body>
+</html>
